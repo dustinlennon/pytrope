@@ -19,4 +19,10 @@ Add an absolute or relative jitter to a series.
 Retool the standard locator and formatter objects to enable marked limits on 
 the axes.
 
+### rescale_colorbar
 
+Rescale a colorbar to match the adjacent axes
+
+### add_caption
+
+Add a caption below the axes
