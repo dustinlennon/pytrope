@@ -92,7 +92,7 @@ stod = lambda s: datetime.datetime.strptime(s, "%Y-%m-%d").date()
 
 # ----
 
-def rescale_colorbar(cbar, ax):
+def adjust_colorbar(cbar, ax):
   """
   Match the cbar height to that of ax
   """
@@ -223,7 +223,6 @@ if __name__ == '__main__':
 
   # matplotlib settings
   plt.rc("figure", figsize=(8,8))
-  # plt.rc('text', usetex=True)
   plt.rc('font', family = 'sans')
 
   # Clip x and y values
@@ -271,7 +270,7 @@ if __name__ == '__main__':
   cbar.set_label("Percent of trips discarded by a 'primary trip' filter")
 
   # [pytrope.matplotlib_extras]: rescale the color bar
-  tmpe.rescale_colorbar(cbar, ax)
+  tmpe.adjust_colorbar(cbar, ax)
 
   # annotate tick marks for clipped values
   for axis in [ax.xaxis, ax.yaxis]:
