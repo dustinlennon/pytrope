@@ -24,7 +24,7 @@ Add an absolute or relative jitter to a series.
 
 ### ClippedLocator, ClippedFormatter
 
-Retool the standard locator and formatter objects to enable marked limits on 
+Retool the standard matplotlib locator and formatter objects to handle clipped data on 
 the axes.
 
 
@@ -35,5 +35,6 @@ Adjust a colorbar's height to match the adjacent axes
 
 ### add_caption
 
-Add a caption below the axes
+Add a caption below the axes; automatically handle the breaking up of the
+text into lines / pieces less wide than the axes width.
 
