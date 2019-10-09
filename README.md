@@ -149,6 +149,6 @@ where 'mau_bins' may reference 'full_date_range' and 'rider_date' without
 explicitly defining them in the same block.  This allows query components to 
 be described more succinctly and in a less encumbered manner.  Because our
 target environment is Jupyter notebook, we use a very simple dependency model.
-If a partial query is removed, so too are all subsequent partial queries.  
-For example, in the above, if 'full_date_range' is removed from the SqlQueryManager, 
+If a partial query is removed, so too are all subsequent partial queries.  For 
+example, in the above, if 'full_date_range' is removed from the SqlQueryManager, 
 'mau_bins' will also be removed.
