@@ -80,8 +80,7 @@ SELECT
   DATE(generate_series) - INTEGER '1' as mau_end
 FROM 
   generate_series('2019-06-01'::timestamp, '2019-08-05'::timestamp, '1 day')
-)
-    
+)    
 SELECT DISTINCT 
   D.cur_date, 
   R.rider_id
@@ -95,9 +94,10 @@ ORDER BY
   cur_date
 ```
 
-is constructed, in Python, as:
+is constructed, in three Python blocks, as:
 
 ```python
+# define the rider_date partial query
 rider_date = """
   SELECT
     rider_id, 
@@ -110,6 +110,7 @@ rider_date = """
 """
 sqm.set_pq('rider_date', rider_date, order_by = ['rider_id', 'trip_date'])
 
+# define the full_date_range partial query
 full_date_range = """
   SELECT 
     DATE(generate_series) AS cur_date,
@@ -129,6 +130,7 @@ full_date_range = """
 })
 sqm.set_pq('full_date_range', full_date_range, order_by = ['cur_date']) 
 
+# define the mau_bins partial query
 mau_bins = """
   SELECT DISTINCT 
     D.cur_date, 
