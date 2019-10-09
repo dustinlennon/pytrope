@@ -22,4 +22,11 @@ setuptools.setup(
     "Operating System :: OS Independent",
   ],
   python_requires='>=3.6',
+  install_requires=[
+    'numpy>=1.17.2',
+    'pandas>=0.25.1',
+    'matplotlib>=3.1.1',
+    'psycopg2>=2.8.3',
+    'SQLAlchemy>=1.3.9'
+  ]
 )
