@@ -4,6 +4,7 @@
 /lib
 /lib64
 /share
+/build
 __pycache__
 pyvenv.cfg
 pytrope.egg-info
