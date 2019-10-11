@@ -57,7 +57,7 @@ call, it will be replaced.
 The SqlQueryManager provides a collection of methods to maintain incremental query results
 in a simple way.  Each new incremental query added to the object may reference previous 
 partial queries through a transparently appended SQL WITH clause.  So it is possible to 
-build a complex query through it's constituent parts:
+build a complex query through its constituent parts:
 
 ```sql
 WITH
