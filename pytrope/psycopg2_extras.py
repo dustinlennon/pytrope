@@ -196,7 +196,7 @@ if __name__ == '__main__':
     }
   }
 
-  url = r"https://dlennon.org/assets/data/c3fa25a0181ebf13a301b28154a6c5fb.bz2"
+  url = r"https://dlennon.org/assets/data/b1bfaf29365c192946f979a4d325ef8b.bz2"
   trips_data = pd.read_csv(url, **kw)
 
   # Copy the trips_data pandas.DataFrame to a PostgreSQL table, 'trips'
@@ -260,8 +260,7 @@ if __name__ == '__main__':
     WHERE
       D.mau_start <= R.trip_date AND R.trip_date <= D.mau_end
   """
-  sqm.set_pq('mau_bins', mau_bins, order_by = ['cur_date'])
+  sqm.set_pq('mau_bins', mau_bins, order_by = ['cur_date'], verbose=True)
 
   # Plot of 7-day MAU, "WAU", over time
   sqm.mau_bins.groupby('cur_date').count().plot()
-  
