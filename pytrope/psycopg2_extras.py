@@ -183,14 +183,14 @@ if __name__ == '__main__':
   #    ssh -N -o 'ServerAliveInterval 30' deploy@dlennon.org -L 5432:192.168.1.102:5432
 
   # PostgreSQL connection string
-  dsn = r"host=localhost port=5432 dbname=sandbox user=deploy sslmode=require options=-c\ search_path=uber"
+  dsn = r"host=192.168.1.102 port=5432 dbname=sandbox user=deploy sslmode=require options=-c\ search_path=uber"
 
   dbm = extras.DatabaseManager(dsn)
   sqm = extras.SqlQueryManager(dbm)
 
   kw = {
     'header' : 0,
-    'names' : ['trip_date', 'rider_id', 'trip_id', 'city_id', 'status'],
+    'names' : ['trip_date', 'rider_id', 'trip_id', 'city_id'],
     'converters' : {
       'trip_date' : lambda x: datetime.datetime.strptime(x, "%Y-%m-%d").date()
     }
